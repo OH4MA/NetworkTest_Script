@@ -3,12 +3,12 @@
 
 **Linux/MacOS**
 ```
-curl -sL https://raw.githubusercontent.com/Oh4ma/NetworkTest_Script/main/networktest.sh | bash
+curl -sL https://raw.githubusercontent.com/OH4MA/NetworkTest_Script/main/networktest.sh | bash
 ```
 
 **Windows Powershell/或Linux和MacOS的Powershell**
 ```
-Invoke-Expression (Invoke-WebRequest -Uri "https://raw.githubusercontent.com/Oh4ma/NetworkTest_Script/main/networktest.ps1" -UseBasicParsing).Content
+Invoke-Expression (Invoke-WebRequest -Uri "https://raw.githubusercontent.com/OH4MA/NetworkTest_Script/main/networktest.ps1" -UseBasicParsing).Content
 ```
 
 Powered by Google Cloud Platform and  Ookla Speedtest
