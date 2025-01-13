@@ -13,4 +13,4 @@ Invoke-Expression (Invoke-WebRequest -Uri "https://raw.githubusercontent.com/OH4
 
 Powered by Google Cloud Platform and  Ookla Speedtest
 
-Made by LIU MIN KAI
+Made by LIU MINKAI
