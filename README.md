@@ -1,6 +1,7 @@
 # NetworkTest_Script
 
 短時間測太多次會被SpeedTest暫時拒絕訪問 但Ping測試依舊可用
+
 **Linux/MacOS**
 ```
 curl -sL https://gist.githubusercontent.com/Oh4ma/7babd9f0dfd7ac26cd8f639821a93d70/raw/42b0fd4b1078a3e49deb10b63a4e621b85474d40/networktest.sh | bash
