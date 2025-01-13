@@ -35,7 +35,7 @@ if (-not (python -m pip show speedtest-cli -ErrorAction SilentlyContinue)) {
 }
 
 # 執行 python測試網路腳本
-$URL = "https://raw.githubusercontent.com/Oh4ma/NetworkTest_Script/main/networktest.py"
+$URL = "https://raw.githubusercontent.com/OH4MA/NetworkTest_Script/main/networktest.py"
 
 try {
     Invoke-WebRequest -Uri $URL -OutFile networktest.py
