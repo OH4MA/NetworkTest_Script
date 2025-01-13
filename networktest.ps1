@@ -35,7 +35,7 @@ if (-not (python -m pip show speedtest-cli -ErrorAction SilentlyContinue)) {
 }
 
 # 執行 networktest.py
-$URL = "https://gist.githubusercontent.com/Oh4ma/222b45a1b22685e3110f699e44a56471/raw/342b2bbf83594832b040f7b4d3b7968fded47734/networktest.py"
+$URL = "https://raw.githubusercontent.com/Oh4ma/NetworkTest_Script/main/networktest.py"
 
 try {
     Invoke-WebRequest -Uri $URL -OutFile networktest.py
