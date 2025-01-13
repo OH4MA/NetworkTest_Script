@@ -119,7 +119,7 @@ def main():
 
     sorted_results = sorted(results, key=lambda x: x[1])
 
-    print("\nGCP節點延遲測試結果(延遲僅供參考):")
+    print("\nGoogle Cloud Platform節點延遲測試結果(延遲僅供參考):")
     for region, response_time in sorted_results:
         print(f"{region} - {response_time:.2f} ms")
 
