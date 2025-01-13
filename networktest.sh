@@ -9,7 +9,7 @@ if ! command -v python3 &>/dev/null; then
     exit 1
 fi
 
-echo "Python已安裝."
+echo "Python已安裝"
 
 # 檢查 pip 是否安裝
 if ! command -v pip3 &>/dev/null; then
