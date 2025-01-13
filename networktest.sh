@@ -34,7 +34,7 @@ else
 fi
 
 # 執行 networktest.py
-URL="https://raw.githubusercontent.com/Oh4ma/NetworkTest_Script/main/networktest.py"
+URL="https://raw.githubusercontent.com/OH4MA/NetworkTest_Script/main/networktest.py"
 
 if ! curl -sL "$URL" | python3 -; then
     echo "無法執行網路測試腳本。請檢查網路環境"
