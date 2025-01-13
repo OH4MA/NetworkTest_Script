@@ -8,7 +8,7 @@ if (-not (Get-Command python -ErrorAction SilentlyContinue)) {
     exit 1
 }
 
-Write-Host "Python已安裝."
+Write-Host "Python已安裝"
 
 # 檢查 pip 是否安裝
 if (-not (Get-Command pip -ErrorAction SilentlyContinue)) {
