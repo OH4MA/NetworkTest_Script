@@ -1,14 +1,14 @@
-# 檢測操作系統
-$IsWindows = $IsMacOS = $IsLinux = $false
+# 檢測系統
+$IsWin = $IsMac = $IsLin = $false
 
 if ($PSVersionTable.OS -like "*Windows*") {
-    $IsWindows = $true
+    $IsWin = $true
     $PythonCommand = "python"
 } elseif ($PSVersionTable.OS -like "*Darwin*") {
-    $IsMacOS = $true
+    $IsMac = $true
     $PythonCommand = "python3"
 } else {
-    $IsLinux = $true
+    $IsLin = $true
     $PythonCommand = "python3"
 }
 
@@ -44,7 +44,7 @@ foreach ($Package in $RequiredPackages) {
     }
 }
 
-# 線上執行 Python 腳本
+# 執行 Python 腳本
 $URL = "https://raw.githubusercontent.com/OH4MA/NetworkTest_Script/main/networktest.py"
 try {
     Invoke-WebRequest -Uri $URL -OutFile "networktest.py"
