@@ -2,41 +2,36 @@
 
 # 檢查 Python 是否安裝
 if ! command -v python3 &>/dev/null; then
-    echo "Python沒有安裝 可以執行以下指令來安裝"
+    echo "Python3未安裝 可依照作業系統使用以下指令安裝:"
     echo "1. Debian/Ubuntu: sudo apt update && sudo apt install python3"
     echo "2. CentOS/Red Hat: sudo yum install python3"
-    echo "3. macOS (using Homebrew): brew install python3"
+    echo "3. macOS (使用HomeBrew): brew install python3"
     exit 1
 fi
 
-echo "Python已安裝"
+echo "Python3已安裝."
 
 # 檢查 pip 是否安裝
 if ! command -v pip3 &>/dev/null; then
-    echo "正在安裝pip..."
+    echo "pip3未安裝 正在安裝pip3..."
     curl -sS https://bootstrap.pypa.io/get-pip.py | python3
 fi
 
-# 檢查 tqdm 是否安裝
-if ! python3 -m pip show tqdm &>/dev/null; then
-    echo "正在安裝tqdm..."
-    python3 -m pip install tqdm
-else
-    echo "tqdm已安裝"
-fi
+# 檢查並安裝必要的依賴項
+REQUIRED_PACKAGES=(requests tqdm speedtest-cli)
+for PACKAGE in "${REQUIRED_PACKAGES[@]}"; do
+    if ! python3 -m pip show "$PACKAGE" &>/dev/null; then
+        echo "Installing $PACKAGE..."
+        python3 -m pip install "$PACKAGE"
+    else
+        echo "所有依賴項都已安裝"
+    fi
+done
 
-# 檢查 speedtest-cli 是否安裝
-if ! python3 -m pip show speedtest-cli &>/dev/null; then
-    echo "正在安裝speedtest-cli..."
-    python3 -m pip install speedtest-cli
-else
-    echo "speedtest-cli已安裝"
-fi
-
-# 執行 networktest.py
+# 線上執行 Python 腳本
 URL="https://raw.githubusercontent.com/OH4MA/NetworkTest_Script/main/networktest.py"
 
 if ! curl -sL "$URL" | python3 -; then
-    echo "無法執行網路測試腳本。請檢查網路環境"
+    echo "無法執行Python網路測試腳本"
     exit 1
 fi
